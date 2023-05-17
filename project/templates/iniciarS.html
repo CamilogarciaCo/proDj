@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    {{error}}
+    <form class="login" method="POST">
+        {% csrf_token %} 
+        <fieldset>
+          
+            <legend class="legend">Login</legend>
+          
+          <div class="input">
+              <label for="id_username"></label>
+              <input type="text" name="username" placeholder="Usuario" required id="id_username"/>
+          </div>
+          
+          <div class="input">
+              <label for="id_password"></label>
+              <input type="password" name="password" placeholder="Contraseña" required id="id_password"/>
+          </div>
+          
+          <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+          
+        </fieldset>
+        
+      </form>
+</body>
+</html>
